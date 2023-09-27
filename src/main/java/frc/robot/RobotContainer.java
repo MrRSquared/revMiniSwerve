@@ -73,6 +73,9 @@ public class RobotContainer {
             () -> m_robotDrive.setX(),
             m_robotDrive));
   }
+  public DriveSubsystem getRobotDrive() {
+    return m_robotDrive;
+  }
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
