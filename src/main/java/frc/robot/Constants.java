@@ -27,7 +27,7 @@ public final class Constants {
   public static final class DriveConstants {
     // Driving Parameters - Note that these are not the maximum capable speeds of
     // the robot, rather the allowed maximum speeds
-    public static final double kMaxSpeedMetersPerSecond = 4.8;
+    public static final double kMaxSpeedMetersPerSecond = 1; // Originally, this was 4.8, but we lowered it for the KittenBot
     public static final double kMaxAngularSpeed = 2 * Math.PI; // radians per second
 
     public static final double kDirectionSlewRate = 1.2; // radians per second
@@ -35,9 +35,9 @@ public final class Constants {
     public static final double kRotationalSlewRate = 2.0; // percent per second (1 = 100%)
 
     // Chassis configuration
-    public static final double kTrackWidth = Units.inchesToMeters(26.5);
+    public static final double kTrackWidth = Units.inchesToMeters(12);
     // Distance between centers of right and left wheels on robot
-    public static final double kWheelBase = Units.inchesToMeters(26.5);
+    public static final double kWheelBase = Units.inchesToMeters(12);
     // Distance between front and back wheels on robot
     public static final SwerveDriveKinematics kDriveKinematics = new SwerveDriveKinematics(
         //new Translation2d(kWheelBase / 2, kTrackWidth / 2),
@@ -46,21 +46,21 @@ public final class Constants {
         new Translation2d(-kWheelBase / 2, -kTrackWidth / 2)); // This is incredibly helpful. https://docs.wpilib.org/en/stable/docs/software/kinematics-and-odometry/swerve-drive-kinematics.html
 
     // Angular offsets of the modules relative to the chassis in radians
-    public static final double kFrontLeftChassisAngularOffset = -Math.PI / 2;
-    public static final double kFrontRightChassisAngularOffset = 0;
+    public static final double kFrontLeftChassisAngularOffset = -Math.PI / 2; //Not used on KittenBot
+    public static final double kFrontRightChassisAngularOffset = 0; //Not used on KittenBot
     public static final double kBackLeftChassisAngularOffset = Math.PI;
     public static final double kBackRightChassisAngularOffset = Math.PI / 2;
 
     // SPARK MAX CAN IDs
-    public static final int kFrontLeftDrivingCanId = 11;
-    public static final int kRearLeftDrivingCanId = 13;
-    public static final int kFrontRightDrivingCanId = 15;
-    public static final int kRearRightDrivingCanId = 17;
+    public static final int kFrontLeftDrivingCanId = 11; //Not used on KittenBot
+    public static final int kRearLeftDrivingCanId = 4;
+    public static final int kFrontRightDrivingCanId = 15;//Not used on KittenBot
+    public static final int kRearRightDrivingCanId = 2;
 
-    public static final int kFrontLeftTurningCanId = 10;
-    public static final int kRearLeftTurningCanId = 12;
-    public static final int kFrontRightTurningCanId = 14;
-    public static final int kRearRightTurningCanId = 16;
+    public static final int kFrontLeftTurningCanId = 10;//Not used on KittenBot
+    public static final int kRearLeftTurningCanId = 3;
+    public static final int kFrontRightTurningCanId = 14;//Not used on KittenBot
+    public static final int kRearRightTurningCanId = 1;
 
     public static final boolean kGyroReversed = false;
   }
@@ -69,7 +69,7 @@ public final class Constants {
     // The MAXSwerve module can be configured with one of three pinion gears: 12T, 13T, or 14T.
     // This changes the drive speed of the module (a pinion gear with more teeth will result in a
     // robot that drives faster).
-    public static final int kDrivingMotorPinionTeeth = 14;
+    public static final int kDrivingMotorPinionTeeth = 12;
 
     // Invert the turning encoder, since the output shaft rotates in the opposite direction of
     // the steering motor in the MAXSwerve Module.
@@ -122,8 +122,8 @@ public final class Constants {
   }
 
   public static final class AutoConstants {
-    public static final double kMaxSpeedMetersPerSecond = 3;
-    public static final double kMaxAccelerationMetersPerSecondSquared = 3;
+    public static final double kMaxSpeedMetersPerSecond = .05;//Rev has these at 3.0, but the mini bot is smaller, lighter, and the bsttery is smaller.
+    public static final double kMaxAccelerationMetersPerSecondSquared = .05;
     public static final double kMaxAngularSpeedRadiansPerSecond = Math.PI;
     public static final double kMaxAngularSpeedRadiansPerSecondSquared = Math.PI;
 
