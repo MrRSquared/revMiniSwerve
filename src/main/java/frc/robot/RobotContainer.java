@@ -21,6 +21,7 @@ import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.OIConstants;
 import frc.robot.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -42,9 +43,12 @@ public class RobotContainer {
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
    */
+
+  
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+    
 
     // Configure default commands
     m_robotDrive.setDefaultCommand(
@@ -54,7 +58,7 @@ public class RobotContainer {
             () -> m_robotDrive.drive(
                 -MathUtil.applyDeadband(m_driverController.getLeftY(), OIConstants.kDriveDeadband),
                 -MathUtil.applyDeadband(m_driverController.getLeftX(), OIConstants.kDriveDeadband),
-                -MathUtil.applyDeadband(m_driverController.getRightX()/4, OIConstants.kDriveDeadband),
+                -MathUtil.applyDeadband(m_driverController.getRightX()/2, OIConstants.kDriveDeadband),
                 false, true),
             m_robotDrive));
   }
@@ -73,14 +77,33 @@ public class RobotContainer {
         .whileTrue(new RunCommand(
             () -> m_robotDrive.setX(),
             m_robotDrive));
-    new JoystickButton(m_driverController, Button.kCircle.value)
+    new JoystickButton(m_driverController, Button.kTriangle.value)
         .whileTrue(new RunCommand(
           () -> m_robotDrive.zeroHeading(),
           m_robotDrive));
+
+    new JoystickButton(m_driverController, Button.kCircle.value)
+        .onTrue(new RunCommand(
+          () -> m_robotDrive.drive(
+                -MathUtil.applyDeadband(m_driverController.getLeftY(), OIConstants.kDriveDeadband),
+                -MathUtil.applyDeadband(m_driverController.getLeftX(), OIConstants.kDriveDeadband),
+                -MathUtil.applyDeadband(m_driverController.getRightX()/2, OIConstants.kDriveDeadband),
+                true, true),
+            m_robotDrive));
+    new JoystickButton(m_driverController, Button.kSquare.value)
+        .onTrue(new RunCommand(
+          () -> m_robotDrive.drive(
+                -MathUtil.applyDeadband(m_driverController.getLeftY(), OIConstants.kDriveDeadband),
+                -MathUtil.applyDeadband(m_driverController.getLeftX(), OIConstants.kDriveDeadband),
+                -MathUtil.applyDeadband(m_driverController.getRightX()/2, OIConstants.kDriveDeadband),
+                false, true),
+            m_robotDrive));
   }
   public DriveSubsystem getRobotDrive() {
     return m_robotDrive;
   }
+
+  
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.

@@ -50,6 +50,7 @@ public class DriveSubsystem extends SubsystemBase {
   // The gyro sensor
   //private final ADIS16470_IMU m_gyro = new ADIS16470_IMU();//We are using a Navx MXP 2, so we commented this line out.
   private final AHRS m_gyro = new AHRS(SerialPort.Port.kMXP); //This is our current IMU.`
+  
 
   // Slew rate filter variables for controlling lateral acceleration
   private double m_currentRotation = 0.0;
@@ -239,6 +240,7 @@ public class DriveSubsystem extends SubsystemBase {
    * @return the robot's heading in degrees, from -180 to 180
    */
   public double getHeading() {
+    addChild("gyro", m_gyro);
     return Rotation2d.fromDegrees(m_gyro.getAngle()).getDegrees();
   }
 

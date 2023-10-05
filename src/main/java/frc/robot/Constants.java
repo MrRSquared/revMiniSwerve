@@ -62,7 +62,7 @@ public final class Constants {
     public static final int kFrontRightTurningCanId = 14;//Not used on KittenBot
     public static final int kRearRightTurningCanId = 1;
 
-    public static final boolean kGyroReversed = false;
+    public static final boolean kGyroReversed = true;
   }
 
   public static final class ModuleConstants {
