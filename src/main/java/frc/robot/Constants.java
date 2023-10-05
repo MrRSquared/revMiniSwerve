@@ -62,7 +62,7 @@ public final class Constants {
     public static final int kFrontRightTurningCanId = 14;//Not used on KittenBot
     public static final int kRearRightTurningCanId = 1;
 
-    public static final boolean kGyroReversed = true;
+    public static final boolean kGyroReversed = false;
   }
 
   public static final class ModuleConstants {
@@ -73,7 +73,7 @@ public final class Constants {
 
     // Invert the turning encoder, since the output shaft rotates in the opposite direction of
     // the steering motor in the MAXSwerve Module.
-    public static final boolean kTurningEncoderInverted = false;
+    public static final boolean kTurningEncoderInverted = true;
 
     // Calculations required for driving motor conversion factors and feed forward
     public static final double kDrivingMotorFreeSpeedRps = NeoMotorConstants.kFreeSpeedRpm / 60;
@@ -112,8 +112,8 @@ public final class Constants {
     public static final IdleMode kDrivingMotorIdleMode = IdleMode.kBrake;
     public static final IdleMode kTurningMotorIdleMode = IdleMode.kBrake;
 
-    public static final int kDrivingMotorCurrentLimit = 50; // amps
-    public static final int kTurningMotorCurrentLimit = 20; // amps
+    public static final int kDrivingMotorCurrentLimit = 20; // amps  50 was the default, but this battery is small
+    public static final int kTurningMotorCurrentLimit = 10; // amps  20 was the default, but this battery is small
   }
 
   public static final class OIConstants {
