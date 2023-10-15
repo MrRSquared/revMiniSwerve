@@ -1,5 +1,8 @@
-# MAXSwerve Java Template v2023.1
+# Scoot Code V1.0
 
+This code is forked from Rev's library. It allows us to use only 2 REV Swerve modules on our Scoot kitten bot. We decided to leave much of their read me unaltered below. learn more about Scoot on our [documentation](https://scootthekittenbot.readthedocs.io/en/latest/).
+
+-------------------------------------------------
 See [the online changelog](https://github.com/REVrobotics/MAXSwerve-Java-Template/blob/main/CHANGELOG.md) for information about updates to the template that may have been released since you created your project.
 
 ## Description
