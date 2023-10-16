@@ -2,7 +2,11 @@
 
 This code is forked from Rev's library. It allows us to use only 2 REV Swerve modules on our Scoot kitten bot. We decided to leave much of their read me unaltered below. learn more about Scoot on our [documentation](https://scootthekittenbot.readthedocs.io/en/latest/).
 
+Here is the [Cadd](https://www.homedepot.com/p/WEN-2-in-110-lbs-Capacity-Rubber-Single-Bearing-Swivel-Plate-Caster-4-Pack-CA2112W/314272694) for our Kittenbot.
+
 -------------------------------------------------
+
+# REV Swerve Library 2023.
 See [the online changelog](https://github.com/REVrobotics/MAXSwerve-Java-Template/blob/main/CHANGELOG.md) for information about updates to the template that may have been released since you created your project.
 
 ## Description
