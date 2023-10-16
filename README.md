@@ -6,7 +6,7 @@ Here is the [Cadd](https://www.homedepot.com/p/WEN-2-in-110-lbs-Capacity-Rubber-
 
 -------------------------------------------------
 
-# REV Swerve Library 2023.
+# REV Swerve Library 2023.1
 See [the online changelog](https://github.com/REVrobotics/MAXSwerve-Java-Template/blob/main/CHANGELOG.md) for information about updates to the template that may have been released since you created your project.
 
 ## Description
